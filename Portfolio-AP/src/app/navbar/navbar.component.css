@@ -1,0 +1,34 @@
+.navbar-brand:hover{
+        transform: scale(1.05);
+        }
+.navbar-nav a:hover{
+        transform: scale(1.05);
+        }
+.nav-item a:hover{
+        transform: scale(1.05);
+        }
+.btn:hover{
+    transform: scale(1.07);
+}
+.fuente{
+    font-family: 'Advent Pro', sans-serif; 
+    font-size: 20px;
+    color: black;
+}
+.fuente2{
+        font-family: 'Advent Pro', sans-serif; 
+        font-size: 20px;
+        color: black;
+    }
+.nav-item .nav-bar-item-center:hover{
+    transform: scale(1.2);
+    }
+    @media (max-width: 600px) {
+        .col-xl-3{
+                background-color:black;
+                margin: 0% -5% -2% -5%
+        }
+        .fuente2{
+                color: white;
+        }
+      }

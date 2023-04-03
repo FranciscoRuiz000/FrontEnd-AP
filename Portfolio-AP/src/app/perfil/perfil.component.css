@@ -1,0 +1,60 @@
+section.banner{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.01), rgba(0, 0, 0, 0.4)),url(../../assets/img/IngenieríaProgramación.png) ;
+    background-size: cover;
+    width: 100%;
+    height: 70vh;
+ }
+.presentacion{
+    margin-top: -9%;
+}
+.hundir:hover{
+    transform:scale(98%);
+}
+.fuente{
+    color: white; 
+    font-family: 'Alumni Sans Pinstripe', sans-serif;
+}
+    *,
+    *::before,
+    *::after
+    {
+        box-sizing: border-box;
+    }
+    
+    *
+    {
+        margin: 0;
+        padding: 0;
+    }
+@keyframes float {
+	0% {
+		box-shadow: 0 5px 15px 0px rgba(53, 53, 53, 0.2);
+		transform: translatey(0px);
+	}
+	50% {
+		box-shadow: 0 25px 15px 0px rgba(53, 53, 53, 0.2);
+		transform: translatey(-15px);
+	}
+	100% {
+		box-shadow: 0 5px 15px 0px rgba(53, 53, 53, 0.2);
+		transform: translatey(0px);
+	}
+}
+section{
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content:center;
+    }
+.float{
+    width: 48vh; 
+    animation: float 6s ease-in-out infinite; 
+    transform: translateY(0px); 
+    overflow:hidden;
+}
+@media (max-width: 600px) {
+    .presentacion{
+        margin-top: -60%;
+    }
+  }

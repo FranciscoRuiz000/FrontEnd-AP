@@ -1,0 +1,30 @@
+.alineacion{
+    margin-top: 0%;
+}
+.titulo{
+    color: white; 
+    font-family: 'Alumni Sans Pinstripe', sans-serif; 
+    font-size: 400%;
+}
+.proyecto{
+    font-family: 'Alumni Sans Pinstripe', sans-serif; 
+    font-size: 200%;
+}
+.conocer-mas{
+    background-color: rgb(92, 92, 92); 
+    border-color: white;
+}
+@media (max-width: 600px) {
+    .titulo{
+        font-size: 8vh;
+    }
+    .proyecto{
+        font-size: 130%;
+    }
+    .descripcion{
+        font-size: 80%;
+    }
+    .alineacion{
+        margin-top: -45%;
+    }
+  }
