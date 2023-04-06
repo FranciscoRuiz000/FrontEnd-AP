@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Panel de control</title>
+        <link href="app.component.css" rel="stylesheet" type="text/css">
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+        <!--CSS only-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+        <link rel="stylesheet" href="/src/app/app.component.css">
+        <!--Fontawesome-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Advent+Pro:wght@100&family=Alumni+Sans+Pinstripe&family=Great+Vibes&display=swap" rel="stylesheet">
+</head>  
+<body style="background-image: none;">
+  <!--Barra de navegación-->
+  <nav class="navbar navbar-expand-lg" style="height: 60px; background-color:rgb(255, 115, 0);">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="app.component.html">
+        <img src="../assets/img/arg-programa-logo-personalizado.png" alt="arg-programa" height="50 px">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarScroll">
+        <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px; align-items:center;">
+          <li class="nav-item">
+            <a class="nav-link active nav-bar-item-center" aria-current="page" href="app.component.html" style="font-family: 'Advent Pro', sans-serif; font-size: 20px;">Inicio</a>
+          </li>
+        </ul>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><i class="fa-duotone fa-user-lock"></i>
+          </button>
+      </div>
+      <div>
+        <ul id="login">
+            <li class="nav-item">
+              <a class="nav-link disabled" style="font-family: 'Advent Pro', sans-serif; font-size: 20px; margin-top: 27px;">Cerrar sesión</a>
+            </li>
+            <!-- Botón de LOGIN-->
+            <li class="nav-item">
+            <a class="nav-link nav-bar" href="app.component.html">
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginModal" style="background-color:rgb(132, 230, 255); margin-bottom: 5px;">
+                <img src="../assets/img/logo-user2.png" alt="logo-usuario-lock" height="35 px" width="40px">
+              </button>
+            </a>
+            </li>
+          </ul>
+            </div>
+          </div>
+    </ul>
+      </div>
+    </div>
+  </nav>
+  <!--PARTE 1-->
+   <div class="container-fluid">
+    <div class="row">
+        <div class="col-1">
+            <!--Espaciador-->
+        </div>
+        <div class="col-2"> <!--Barra panel de control-->
+            <div class="row">
+                  <div class="list-group" id="list-tab" role="tablist" style="margin-top: 12%; margin-bottom: 10%;">
+                    <a class="list-group-item list-group-item-action" id="list-home-list" data-bs-toggle="list" href="#list-redes-sociales" role="tab" aria-controls="list-home"><img src="../assets/img/logo-redes sociales2.png" width="40px" style="margin-right: 10%;">Redes sociales</a>
+                    <a class="list-group-item list-group-item-action" id="list-profile-list" data-bs-toggle="list" href="#list-banner" role="tab" aria-controls="list-profile" style="height: 60px"><img src="../assets/img/logo-banner.png" width="45px" style="margin-right:13%;">Banner</a>
+                    <a class="list-group-item list-group-item-action" id="list-messages-list" data-bs-toggle="list" href="#list-perfil" role="tab" aria-controls="list-messages" style="height: 60px"><img src="../assets/img/logo-perfil-dashboard.png" width="45px" style="margin-right: 13%;">Perfil</a>
+                    <a class="list-group-item list-group-item-action" id="list-settings-list" data-bs-toggle="list" href="#list-presentación" role="tab" aria-controls="list-settings" style="height: 60px;"><img src="../assets/img/logo-presentacion.png" width="50px" style="margin-right: 10%; margin-top: 4%;">Presentación</a>
+                    <a class="list-group-item list-group-item-action" id="list-settings-list" data-bs-toggle="list" href="#list-exp-laboral" role="tab" aria-controls="list-settings" style="height: 60px;"><img src="../assets/img/logo-experiencia laboral.png" width="40px" style="margin-right: 16%; margin-top: 3%;">Exp. laboral</a>
+                    <a class="list-group-item list-group-item-action" id="list-settings-list" data-bs-toggle="list" href="#list-proyectos" role="tab" aria-controls="list-settings" style="height: 60px"><img src="../assets/img/logo-proyectos.png" width="40px" style="margin-right: 16%; margin-top: 1%;">Proyectos</a>
+                    <a class="list-group-item list-group-item-action" id="list-settings-list" data-bs-toggle="list" href="#list-footer" role="tab" aria-controls="list-settings" style="height: 60px"><img src="../assets/img/logo-footer.png" width="70px" style="margin-right: 9%; margin-left: -10%; margin-top: 3%;">Footer</a>
+                    <a class="list-group-item list-group-item-action active" id="list-settings-list" data-bs-toggle="list" href="#list-img-bienvenida" role="tab" aria-controls="list-settings" style="height: 19px;"></a>
+                  </div>
+            </div>
+        </div>
+        <div class="col-8" style="background-color: white; margin-top: 25px; border-radius: 10px; margin-bottom: 1.5%; margin-left: -0.9%; border-color: black; border-style:groove">
+             <div class="tab-content" id="nav-tabContent" style="margin-top: 5%; background-color: white;">
+              <!--Comienzo de REDES SOCIALES-->
+              <div class="tab-pane fade" id="list-redes-sociales" role="tabpanel" aria-labelledby="list-home-list">
+              <nav class="navbar navbar-expand-lg" style="height: 58px; background-color:rgb(24, 105, 255); margin-top: -5%;margin-left: -1.5%; margin-right: -1.5%; border-top-left-radius:7px; border-top-right-radius: 7px;">
+                <div class="container-fluid">
+                  <div class="collapse navbar-collapse" id="navbarScroll">
+                    <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                      <li class="nav-item">
+                        <a class="text text-white text-center" style="font-family: 'Advent Pro', sans-serif; font-size: 30px; text-decoration: none;">Configurar las redes sociales</a>
+                      </li>
+                  </div>
+                </div>
+              </nav>
+              <div class="accordion" id="accordionExample" style="margin-top: 2%;">
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button text-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" style="background-color:rgb(0, 0, 0)">
+                      LINKEDIN
+                    </button>
+                  </h2>
+                  <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                    <div class="accordion-body" style="background-color:rgb(233, 233, 233) ;">
+                      <div>
+                        <label for="linkedin" class="form-label" >Modificar la dirección URL a la que se dirige al presionar el botón.</label>
+                        <input type="text" class="form-control" id="Linkedin" placeholder="Ingrese la URL del nuevo perfil">
+                        <div class="btn-group my-2" role="group" aria-label="Basic mixed styles example" style="display: flex; align-items: end;">
+                          <button type="button" class="btn btn-danger">Eliminar</button>
+                          <button type="button" class="btn btn-warning">Actualizar</button>
+                          <button type="button" class="btn btn-success">Guardar</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed text-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" style="background-color:black;">
+                      FACEBOOK
+                    </button>
+                  </h2>
+                  <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                    <div class="accordion-body" style="background-color:rgb(233, 233, 233) ;">
+                      <div>
+                        <label for="facebook" class="form-label" >Modificar la dirección URL a la que se dirige al presionar el botón.</label>
+                        <input type="text" class="form-control" id="Facebook" placeholder="Ingrese la URL del nuevo perfil">
+                        <div class="btn-group my-2" role="group" aria-label="Basic mixed styles example" style="display: flex; align-items: end;">
+                          <button type="button" class="btn btn-danger">Eliminar</button>
+                          <button type="button" class="btn btn-warning">Actualizar</button>
+                          <button type="button" class="btn btn-success">Guardar</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingThree">
+                    <button class="accordion-button collapsed text-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" style="background-color:black;">
+                      GITHUB
+                    </button>
+                  </h2>
+                  <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                    <div class="accordion-body" style="background-color:rgb(233, 233, 233) ;">
+                      <div>
+                        <label for="github" class="form-label" >Modificar la dirección URL a la que se dirige al presionar el botón.</label>
+                        <input type="text" class="form-control" id="Github" placeholder="Ingrese la URL del nuevo perfil">
+                        <div class="btn-group my-2" role="group" aria-label="Basic mixed styles example" style="display: flex; align-items: end;">
+                          <button type="button" class="btn btn-danger">Eliminar</button>
+                          <button type="button" class="btn btn-warning">Actualizar</button>
+                          <button type="button" class="btn btn-success">Guardar</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--Final de contenedor de redes sociales-->
+             </div>
+             <!--COMIENZO DE BANNER-->
+             <div class="tab-pane fade" id="list-banner" role="tabpanel" aria-labelledby="list-profile-list">
+              <!--Contenedor de banner-->
+              <nav class="navbar navbar-expand-lg" style="height: 58px; background-color:rgb(24, 105, 255); margin-top: -5%;margin-left: -1.5%; margin-right: -1.5%; border-top-left-radius:7px; border-top-right-radius: 7px;">
+                <div class="container-fluid">
+                  <div class="collapse navbar-collapse" id="navbarScroll">
+                    <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                      <li class="nav-item">
+                        <a class="text text-white text-center" style="font-family: 'Advent Pro', sans-serif; font-size: 30px; text-decoration: none;">Configurar el banner</a>
+                      </li>
+                  </div>
+                </div>
+              </nav>
+              <div class="accordion" id="accordionExample" style="margin-top: 2%;">
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button text-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" style="background-color:rgb(0, 0, 0)">
+                      IMAGEN
+                    </button>
+                  </h2>
+                  <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                    <div class="accordion-body" style="background-color:rgb(233, 233, 233) ;">
+                      <div>
+                        <div class="mb-3">
+                          <label for="formFile" class="form-label">Cambiar la imagen de banner.</label>
+                          <input class="form-control" type="file" id="formFile">
+                        </div>
+                        <div class="btn-group my-2" role="group" aria-label="Basic mixed styles example" style="display: flex; align-items: end;">
+                          <button type="button" class="btn btn-danger">Eliminar</button>
+                          <button type="button" class="btn btn-warning">Actualizar</button>
+                          <button type="button" class="btn btn-success">Guardar</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+             </div>
+             <!--COMIENZO PERFIL-->
+             <div class="tab-pane fade" id="list-perfil" role="tabpanel" aria-labelledby="list-messages-list">
+              <!--Contenedor de perfil -->
+              <nav class="navbar navbar-expand-lg" style="height: 58px; background-color:rgb(24, 105, 255); margin-top: -5%;margin-left: -1.5%; margin-right: -1.5%; border-top-left-radius:7px; border-top-right-radius: 7px;">
+                <div class="container-fluid">
+                  <div class="collapse navbar-collapse" id="navbarScroll">
+                    <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                      <li class="nav-item">
+                        <a class="text text-white text-center" style="font-family: 'Advent Pro', sans-serif; font-size: 30px; text-decoration: none;">Configurar el perfil</a>
+                      </li>
+                  </div>
+                </div>
+              </nav>
+              <div class="accordion" id="acordeon-perfil" style="margin-top: 2%;">
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button text-white" type="button" data-bs-toggle="collapse" data-bs-target="#fotografía" aria-expanded="true" aria-controls="fotografía" style="background-color:rgb(0, 0, 0)">
+                      FOTO DE PERFIL
+                    </button>
+                  </h2>
+                  <div id="fotografía" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#acordeon-perfil">
+                    <div class="accordion-body" style="background-color:rgb(233, 233, 233) ;">
+                      <div>
+                        <div class="mb-3">
+                          <label for="formFile" class="form-label">Cambiar la fotografía de perfil.</label>
+                          <input class="form-control" type="file" id="formFile">
+                        </div>
+                        <div class="btn-group my-2" role="group" aria-label="Basic mixed styles example" style="display: flex; align-items: end;">
+                          <button type="button" class="btn btn-danger">Eliminar</button>
+                          <button type="button" class="btn btn-warning">Actualizar</button>
+                          <button type="button" class="btn btn-success">Guardar</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed text-white" type="button" data-bs-toggle="collapse" data-bs-target="#primera-linea" aria-expanded="false" aria-controls="primera-linea" style="background-color:black;">
+                      PRIMERA LÍNEA
+                    </button>
+                  </h2>
+                  <div id="primera-linea" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#acordeon-perfil">
+                    <div class="accordion-body" style="background-color:rgb(233, 233, 233) ;">
+                      <div>
+                        <label for="primera-linea" class="form-label" >Modificar la primera línea o título del perfil.</label>
+                        <input type="text" class="form-control" id="primera-linea" placeholder="Ingrese el nuevo título">
+                        <div class="btn-group my-2" role="group" aria-label="Basic mixed styles example" style="display: flex; align-items: end;">
+                          <button type="button" class="btn btn-danger">Eliminar</button>
+                          <button type="button" class="btn btn-warning">Actualizar</button>
+                          <button type="button" class="btn btn-success">Guardar</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingThree">
+                    <button class="accordion-button collapsed text-white" type="button" data-bs-toggle="collapse" data-bs-target="#segunda-linea" aria-expanded="false" aria-controls="segunda-linea" style="background-color:black;">
+                      SEGUNDA LÍNEA
+                    </button>
+                  </h2>
+                  <div id="segunda-linea" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#acordeon-perfil">
+                    <div class="accordion-body" style="background-color:rgb(233, 233, 233) ;">
+                      <div>
+                        <label for="segunda-linea" class="form-label" >Modificar la segunda línea o subtítulo del perfil.</label>
+                        <input type="text" class="form-control" id="segunda-linea" placeholder="Ingrese el nuevo subtítulo">
+                        <div class="btn-group my-2" role="group" aria-label="Basic mixed styles example" style="display: flex; align-items: end;">
+                          <button type="button" class="btn btn-danger">Eliminar</button>
+                          <button type="button" class="btn btn-warning">Actualizar</button>
+                          <button type="button" class="btn btn-success">Guardar</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--Final de contenedor de perfil-->
+             </div>
+             <!--COMIENZO PRESENTACIÓN-->
+             <div class="tab-pane fade" id="list-presentación" role="tabpanel" aria-labelledby="list-settings-list">
+              <nav class="navbar navbar-expand-lg" style="height: 58px; background-color:rgb(24, 105, 255); margin-top: -5%;margin-left: -1.5%; margin-right: -1.5%; border-top-left-radius:7px; border-top-right-radius: 7px;">
+                <div class="container-fluid">
+                  <div class="collapse navbar-collapse" id="navbarScroll">
+                    <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                      <li class="nav-item">
+                        <a class="text text-white text-center" style="font-family: 'Advent Pro', sans-serif; font-size: 30px; text-decoration: none;">Configurar la presentación</a>
+                      </li>
+                  </div>
+                </div>
+              </nav>
+              <div class="accordion" id="acordeon-presentacion" style="margin-top: 2%;">
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button text-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" style="background-color:rgb(0, 0, 0)">
+                      IMAGEN
+                    </button>
+                  </h2>
+                  <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#acordeon-presentacion">
+                    <div class="accordion-body" style="background-color:rgb(233, 233, 233) ;">
+                      <div>
+                        <div class="mb-3">
+                          <label for="formFile" class="form-label">Seleccione la imagen de la presentación.</label>
+                          <input class="form-control" type="file" id="formFile">
+                        </div>
+                        <div class="btn-group my-2" role="group" aria-label="Basic mixed styles example" style="display: flex; align-items: end;">
+                          <button type="button" class="btn btn-danger">Eliminar</button>
+                          <button type="button" class="btn btn-warning">Actualizar</button>
+                          <button type="button" class="btn btn-success">Guardar</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed text-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" style="background-color:black;">
+                      TEXTO DE PRESENTACIÓN
+                    </button>
+                  </h2>
+                  <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#acordeon-presentacion">
+                    <div class="accordion-body" style="background-color:rgb(233, 233, 233) ;">
+                      <div>
+                        <label for="presentación" class="form-label" >Modificar el texto de presentación.</label>
+                        <div>
+                          <textarea class="form-control" placeholder="Ingrese el nuevo texto de presentación" id="presentación" style="height: 100px;"></textarea>
+                        </div>
+                        <div class="btn-group my-2" role="group" aria-label="Basic mixed styles example" style="display: flex; align-items: end;">
+                          <button type="button" class="btn btn-danger">Eliminar</button>
+                          <button type="button" class="btn btn-warning">Actualizar</button>
+                          <button type="button" class="btn btn-success">Guardar</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingThree">
+                    <button class="accordion-button collapsed text-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" style="background-color:black;">
+                      FONDO DE TEXTO
+                    </button>
+                  </h2>
+                  <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#acordeon-presentacion">
+                    <div class="accordion-body" style="background-color:rgb(233, 233, 233) ;">
+                      <div>
+                        <label for="presentación" class="form-label" >Modificar la opacidad del fondo del texto.</label>
+                        <input type="text" class="form-control" id="Presentación" placeholder="Ingrese un número del 0 al 1">
+                        <div class="btn-group my-2" role="group" aria-label="Basic mixed styles example" style="display: flex; align-items: end;">
+                          <button type="button" class="btn btn-danger">Eliminar</button>
+                          <button type="button" class="btn btn-warning">Actualizar</button>
+                          <button type="button" class="btn btn-success">Guardar</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--FIN DE PRESENTACIÓN-->
+             <div class="tab-pane fade" id="list-exp-laboral" role="tabpanel" aria-labelledby="list-settings-list">
+              <!--COMIENZO EXPERIENCIA LABORAL-->
+                <nav class="navbar navbar-expand-lg" style="height: 58px; background-color:rgb(24, 105, 255); margin-top: -5%;margin-left: -1.5%; margin-right: -1.5%; border-top-left-radius:7px; border-top-right-radius: 7px; margin-bottom: 3%;">
+                  <div class="container-fluid">
+                    <div class="collapse navbar-collapse" id="navbarScroll">
+                      <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                        <li class="nav-item">
+                          <a class="text text-white text-center" style="font-family: 'Advent Pro', sans-serif; font-size: 30px; text-decoration: none;">Configurar la experiencia laboral</a>
+                        </li>
+                    </div>
+                  </div>
+                </nav>
+                <div class="accordion" id="acordeon-exp" style="margin-top: 2%; display: flex;">
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                      <button class="accordion-button text-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" style="background-color:rgb(0, 0, 0,0.85); transform: rotate(270deg); position:absolute; top: 54.5%; left: 65.8%; width: 27.5%;">
+                        EXPERIENCIA 1
+                      </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#acordeon-exp">
+                      <div class="accordion-body text-white" style="background-color:rgb(0, 0, 0,0.6);  display: block; width: 640px; height: 337px; border-top-left-radius: 10px; border-bottom-left-radius: 10px; border-color: black; border-style:outset;">
+                        <div class="mb-3">
+                          <label for="formFile" class="form-label">Seleccione el logo de la experiencia.</label>
+                          <input class="form-control" type="file" id="formFile">
+                        </div>
+                        <div>
+                          <label for="linkedin" class="form-label" >Modificar el título.</label>
+                          <input type="text" class="form-control" id="Linkedin" placeholder="Ingrese el nombre de la nueva experiencia" style="margin-bottom: 2%;">
+                        </div>
+                        <div>
+                          <label for="linkedin" class="form-label" >Modificar el dato secundario.</label>
+                          <input type="text" class="form-control" id="Linkedin" placeholder="Ingrese la empresa o dato secundario" style="margin-bottom: 3%;">
+                          <div class="btn-group my-2" role="group" aria-label="Basic mixed styles example" style="display: flex; align-items: end;">
+                            <button type="button" class="btn btn-danger">Eliminar</button>
+                            <button type="button" class="btn btn-warning">Actualizar</button>
+                            <button type="button" class="btn btn-success">Guardar</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                      <button class="accordion-button text-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo" style="background-color:rgb(0, 0, 0,0.9); transform: rotate(270deg); position:absolute; top: 54.5%; left: 70%; width: 27.5%;">
+                        EXPERIENCIA 2
+                      </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#acordeon-exp">
+                      <div class="accordion-body text-white" style="background-color:rgb(0, 0, 0,0.68); display: block; width: 640px; height: 337px; border-top-left-radius: 10px; border-bottom-left-radius: 10px; border-color: black; border-style:outset;">
+                        <div class="mb-3">
+                          <label for="formFile" class="form-label">Seleccione el logo de la experiencia.</label>
+                          <input class="form-control" type="file" id="formFile">
+                        </div>
+                        <div>
+                          <label for="linkedin" class="form-label" >Modificar el título.</label>
+                          <input type="text" class="form-control" id="Linkedin" placeholder="Ingrese el nombre de la nueva experiencia" style="margin-bottom: 2%;">
+                        </div>
+                        <div>
+                          <label for="linkedin" class="form-label" >Modificar el dato secundario.</label>
+                          <input type="text" class="form-control" id="Linkedin" placeholder="Ingrese la empresa o dato secundario" style="margin-bottom: 3%;">
+                          <div class="btn-group my-2" role="group" aria-label="Basic mixed styles example" style="display: flex; align-items: end;">
+                            <button type="button" class="btn btn-danger">Eliminar</button>
+                            <button type="button" class="btn btn-warning">Actualizar</button>
+                            <button type="button" class="btn btn-success">Guardar</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingThree">
+                      <button class="accordion-button text-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree" style="background-color:rgb(0, 0, 0,0.95); transform: rotate(270deg); position:absolute; top: 54.5%; left: 74.1%; width: 27.5%;">
+                        EXPERIENCIA 3
+                      </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThreex" data-bs-parent="#acordeon-exp">
+                      <div class="accordion-body text-white" style="background-color:rgb(0, 0, 0,0.75); display: block; width: 640px; height: 337px; border-top-left-radius: 10px; border-bottom-left-radius: 10px; border-color: black; border-style:outset;">
+                        <div class="mb-3">
+                          <label for="formFile" class="form-label">Seleccione el logo de la experiencia.</label>
+                          <input class="form-control" type="file" id="formFile">
+                        </div>
+                        <div>
+                          <label for="linkedin" class="form-label" >Modificar el título.</label>
+                          <input type="text" class="form-control" id="Linkedin" placeholder="Ingrese el nombre de la nueva experiencia" style="margin-bottom: 2%;">
+                        </div>
+                        <div>
+                          <label for="linkedin" class="form-label" >Modificar el dato secundario.</label>
+                          <input type="text" class="form-control" id="Linkedin" placeholder="Ingrese la empresa o dato secundario" style="margin-bottom: 3%;">
+                          <div class="btn-group my-2" role="group" aria-label="Basic mixed styles example" style="display: flex; align-items: end;">
+                            <button type="button" class="btn btn-danger">Eliminar</button>
+                            <button type="button" class="btn btn-warning">Actualizar</button>
+                            <button type="button" class="btn btn-success">Guardar</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!--FIN DE EXPERIENCIA LABORAL-->
+            </div>
+            <!--INICIO DE PROYECTOS-->
+             <div class="tab-pane fade" id="list-proyectos" role="tabpanel" aria-labelledby="list-settings-list">
+              <nav class="navbar navbar-expand-lg" style="height: 58px; background-color:rgb(24, 105, 255); margin-top: -5%;margin-left: -1.5%; margin-right: -1.5%; border-top-left-radius:7px; border-top-right-radius: 7px;">
+                <div class="container-fluid">
+                  <div class="collapse navbar-collapse" id="navbarScroll">
+                    <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                      <li class="nav-item">
+                        <a class="text text-white text-center" style="font-family: 'Advent Pro', sans-serif; font-size: 30px; text-decoration: none;">Configurar el apartado de proyectos</a>
+                      </li>
+                  </div>
+                </div>
+              </nav>
+              <div class="accordion" id="acordeon-proyectos" style="margin-top: 0.5%;">
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button text-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" style="background-color:rgb(0, 0, 0)">
+                      CARRUSEL DE IMÁGENES
+                    </button>
+                  </h2>
+                  <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#acordeon-proyectos">
+                    <div class="accordion-body" style="background-color:rgb(233, 233, 233) ;">
+                      <div>
+                        <div class="mb-3">
+                          <label for="formFileMultiple" class="form-label">Seleccione las imágenes que desea agregar al carrusel.</label>
+                          <input class="form-control" type="file" id="formFileMultiple" multiple>
+                        </div>
+                        <div class="btn-group my-2" role="group" aria-label="Basic mixed styles example" style="display: flex; align-items: end;">
+                          <button type="button" class="btn btn-danger">Eliminar</button>
+                          <button type="button" class="btn btn-warning">Actualizar</button>
+                          <button type="button" class="btn btn-success">Guardar</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed text-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" style="background-color:black;">
+                      PROYECTO 1
+                    </button>
+                  </h2>
+                  <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#acordeon-proyectos">
+                    <div class="accordion-body" style="background-color:rgb(233, 233, 233) ;">
+                      <div>
+                        <div class="mb-3">
+                          <label for="formFile" class="form-label">Seleccione la imagen del proyecto.</label>
+                          <input class="form-control" type="file" id="formFile">
+                        </div>
+                        <div>
+                          <label for="proyecto1" class="form-label" >Nombre del proyecto</label>
+                          <input type="text" class="form-control" id="Linkedin" placeholder="Ingrese el nombre del proyecto" style="margin-bottom: 2%;">
+                        </div>
+                        <div>
+                          <label for="proyecto1" class="form-label" >Descripción del proyecto</label>
+                          <textarea class="form-control" placeholder="Ingrese una descripción del proyecto" id="presentación" style="height: 100px;"></textarea>
+                        </div>
+                        <div class="btn-group my-2" role="group" aria-label="Basic mixed styles example" style="display: flex; align-items: end;">
+                          <button type="button" class="btn btn-danger">Eliminar</button>
+                          <button type="button" class="btn btn-warning">Actualizar</button>
+                          <button type="button" class="btn btn-success">Guardar</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingThree">
+                    <button class="accordion-button collapsed text-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" style="background-color:black;">
+                      PROYECTO 2
+                    </button>
+                  </h2>
+                  <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#acordeon-proyectos">
+                    <div class="accordion-body" style="background-color:rgb(233, 233, 233) ;">
+                      <div>
+                        <div class="mb-3">
+                          <label for="formFile" class="form-label">Seleccione la imagen del proyecto.</label>
+                          <input class="form-control" type="file" id="formFile">
+                        </div>
+                        <div>
+                          <label for="proyecto1" class="form-label" >Nombre del proyecto</label>
+                          <input type="text" class="form-control" id="Linkedin" placeholder="Ingrese el nombre del proyecto" style="margin-bottom: 2%;">
+                        </div>
+                        <div>
+                          <label for="proyecto1" class="form-label" >Descripción del proyecto</label>
+                          <textarea class="form-control" placeholder="Ingrese una descripción del proyecto" id="presentación" style="height: 100px;"></textarea>
+                        </div>
+                        <div class="btn-group my-2" role="group" aria-label="Basic mixed styles example" style="display: flex; align-items: end;">
+                          <button type="button" class="btn btn-danger">Eliminar</button>
+                          <button type="button" class="btn btn-warning">Actualizar</button>
+                          <button type="button" class="btn btn-success">Guardar</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingFour">
+                    <button class="accordion-button collapsed text-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour" style="background-color:black;">
+                      PROYECTO 3
+                    </button>
+                  </h2>
+                  <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#acordeon-proyectos">
+                    <div class="accordion-body" style="background-color:rgb(233, 233, 233) ;">
+                      <div>
+                        <div class="mb-3">
+                          <label for="formFile" class="form-label">Seleccione la imagen del proyecto.</label>
+                          <input class="form-control" type="file" id="formFile">
+                        </div>
+                        <div>
+                          <label for="proyecto1" class="form-label" >Nombre del proyecto</label>
+                          <input type="text" class="form-control" id="Linkedin" placeholder="Ingrese el nombre del proyecto" style="margin-bottom: 2%;">
+                        </div>
+                        <div>
+                          <label for="proyecto1" class="form-label" >Descripción del proyecto</label>
+                          <textarea class="form-control" placeholder="Ingrese una descripción del proyecto" id="presentación" style="height: 100px;"></textarea>
+                        </div>
+                        <div class="btn-group my-2" role="group" aria-label="Basic mixed styles example" style="display: flex; align-items: end;">
+                          <button type="button" class="btn btn-danger">Eliminar</button>
+                          <button type="button" class="btn btn-warning">Actualizar</button>
+                          <button type="button" class="btn btn-success">Guardar</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+             </div>
+             <div class="tab-pane fade" id="list-footer" role="tabpanel" aria-labelledby="list-settings-list">
+              <nav class="navbar navbar-expand-lg" style="height: 58px; background-color:rgb(24, 105, 255); margin-top: -5%;margin-left: -1.5%; margin-right: -1.5%; border-top-left-radius:7px; border-top-right-radius: 7px;">
+                <div class="container-fluid">
+                  <div class="collapse navbar-collapse" id="navbarScroll">
+                    <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                      <li class="nav-item">
+                        <a class="text text-white text-center" style="font-family: 'Advent Pro', sans-serif; font-size: 30px; text-decoration: none;">Configurar las redes sociales</a>
+                      </li>
+                  </div>
+                </div>
+              </nav>
+              <div class="accordion" id="Footer" style="margin-top: 2%;">
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingUno">
+                    <button class="accordion-button text-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseUno" aria-expanded="true" aria-controls="collapseUno" style="background-color:rgb(0, 0, 0)">
+                      CONTACTO
+                    </button>
+                  </h2>
+                  <div id="collapseUno" class="accordion-collapse collapse show" aria-labelledby="headingUno" data-bs-parent="#Footer">
+                    <div class="accordion-body" style="background-color:rgb(233, 233, 233) ;">
+                      <div>
+                        <label for="linkedin" class="form-label" >Perfíl de facebook.</label>
+                        <input type="text" class="form-control" id="facebook" placeholder="Ingrese la URL del nuevo perfil">
+                        <label for="linkedin" class="form-label" >Perfíl de Linkedin.</label>
+                        <input type="text" class="form-control" id="Linkedin" placeholder="Ingrese la URL del nuevo perfil">
+                        <label for="linkedin" class="form-label" >Perfíl de Github.</label>
+                        <input type="text" class="form-control" id="Github" placeholder="Ingrese la URL del nuevo perfil">
+                        <div class="btn-group my-2" role="group" aria-label="Basic mixed styles example" style="display: flex; align-items: end;">
+                          <button type="button" class="btn btn-danger">Eliminar</button>
+                          <button type="button" class="btn btn-warning">Actualizar</button>
+                          <button type="button" class="btn btn-success">Guardar</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingDos">
+                    <button class="accordion-button collapsed text-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDos" aria-expanded="false" aria-controls="collapseDos" style="background-color:black;">
+                      TEXTO
+                    </button>
+                  </h2>
+                  <div id="collapseDos" class="accordion-collapse collapse" aria-labelledby="headingDos" data-bs-parent="#Footer">
+                    <div class="accordion-body" style="background-color:rgb(233, 233, 233) ;">
+                      <div>
+                        <label for="facebook" class="form-label" >Modificar el texto de Copyright.</label>
+                        <input type="text" class="form-control" id="Facebook" placeholder="Ingrese el nuevo texto">
+                        <div class="btn-group my-2" role="group" aria-label="Basic mixed styles example" style="display: flex; align-items: end;">
+                          <button type="button" class="btn btn-danger">Eliminar</button>
+                          <button type="button" class="btn btn-warning">Actualizar</button>
+                          <button type="button" class="btn btn-success">Guardar</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingTres">
+                    <button class="accordion-button collapsed text-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTres" aria-expanded="false" aria-controls="collapseTres" style="background-color:black;">
+                      COLOR
+                    </button>
+                  </h2>
+                  <div id="collapseTres" class="accordion-collapse collapse" aria-labelledby="headingTres" data-bs-parent="#Footer">
+                    <div class="accordion-body" style="background-color:rgb(233, 233, 233) ;">
+                      <div class="text-center" style="align-items: center;">
+                         <label for="exampleColorInput" class="form-label" style="align-items: center;">Seleccionar nuevo color de footer</label>
+                          <input type="color" class="form-control form-control-color" id="exampleColorInput" value="#563d7c" title="Color de footer" style="width: 100%; height: 75px;;">
+                        <div class="btn-group my-2" role="group" aria-label="Basic mixed styles example" style="display: flex; align-items: end;">
+                          <button type="button" class="btn btn-danger">Eliminar</button>
+                          <button type="button" class="btn btn-warning">Actualizar</button>
+                          <button type="button" class="btn btn-success">Guardar</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+             </div>
+             <div class="tab-pane fade show active" id="list-img-bienvenida" role="tabpanel" aria-labelledby="list-settings-list"><img src="../assets/img/PRUEBA2.png" style="background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; margin-top: -4.2%; border-style: groove; border-width: 10px;"></div>
+            </div>
+        </div>
+            <!--<div class="list-group mt-4 mb-5">
+                <button type="button" class="list-group-item list-group-item-action active text-center" aria-current="true">Panel de control</button>
+                <button type="button" class="list-group-item list-group-item-action" data-bs-toggle="modal" data-bs-target="#RedesSociales" style="height: 60px;"><img src="../assets/img/logo-redes sociales.png" width="50px" style="margin-right: 10%;">Redes sociales</button>
+                <button style="height: 60px;" type="button" class="list-group-item list-group-item-action" data-bs-toggle="modal" data-bs-target="#Banner"><img src="../assets/img/logo-banner.png" width="45px" style="margin-right:13%;">Banner</button></a>
+                <button type="button" class="list-group-item list-group-item-action" data-bs-toggle="modal" data-bs-target="#Perfil" style="height: 60px;"><img src="../assets/img/logo-perfil-dashboard.png" width="45px" style="margin-right: 13%;">Perfil</button></a>
+                <button type="button" class="list-group-item list-group-item-action" data-bs-toggle="modal" data-bs-target="#Presentación" style="height: 60px;"><img src="../assets/img/logo-presentacion.png" width="50px" style="margin-right: 10%;">Presentación</button></a>
+                <button type="button" class="list-group-item list-group-item-action" data-bs-toggle="modal" data-bs-target="#ExpLaboral" style="height: 60px;"><img src="../assets/img/logo-experiencia laboral.png" width="40px" style="margin-right: 16%;">Exp. laboral</button></a>
+                <button type="button" class="list-group-item list-group-item-action" data-bs-toggle="modal" data-bs-target="#Proyectos" style="height: 60px;"><img src="../assets/img/logo-proyectos.png" width="40px" style="margin-right: 16%;">Mis proyectos</button></a>
+                <button type="button" class="list-group-item list-group-item-action" data-bs-toggle="modal" data-bs-target="#Footer" style="height: 60px;"><img src="../assets/img/logo-footer.png" width="70px" style="margin-right: 9%; margin-left: -10%;">Footer</button></a>
+                <button type="button" class="list-group-item list-group-item-action" disabled style="background-color: rgb(47, 103, 255);"></button>
+            </div>
+        </div>
+        <div class="col-8"> 
+            <!--VENTANA MODAL REDES SOCIALES
+            <div class="modal fade" id="RedesSociales" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered moda-lg">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5" id="exampleModalLabel">Configurar: Redes sociales</h1>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body"> 
+                        <section class="login"><!--Contenido de ventana modal
+                            <div class="container form-login">
+                              <div class="row">
+                                <div class="col-0">
+                                </div>
+                                <div class="col-12" style="background-color: rgba(37, 37, 37, 0.4); padding: 4%; border-radius: 15%;">
+                                  <form>
+                                    <div class="mb-3">
+                                      <label for="exampleInputEmail1" class="form-label" style="color: white";>Ingrese su email</label>
+                                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" style="background-color: rgb(168, 168, 168);">
+                                      <div id="emailHelp" class="form-text" style="color: rgba(255, 255, 255, 0.5);">Nunca compartiremos tu información con nadie.</div>
+                                    </div>
+                                    <div class="mb-3">
+                                      <label for="exampleInputPassword1" class="form-label" style="color: white";>Contraseña</label>
+                                      <input type="password" class="form-control" id="exampleInputPassword1" style="background-color: rgb(168, 168, 168);">
+                                    </div>
+                                    <div class="mb-3 form-check">
+                                      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                      <label class="form-check-label" for="exampleCheck1" style="color: white;">Recuérdame</label>
+                                    </div>
+                                    <div class="modal-footer">
+                                      <small style="margin-right: 15%; color: rgb(116, 116, 116);">No tengo cuenta, deseo <a href="register.html">registrarme.</a></small>
+                                      <img src="../assets/img/user-lock2.png" alt="logo-usuario-lock" height="50px" style="align-items: start;">
+                                      <button type="submit" class="btn btn-primary" data-bs-dismiss="modal" style="background-color: rgb(0, 126, 143); border-color: black;">Iniciar sesión</button>
+                                    </div>
+                                  </form>
+                                </div>
+                                <div class="col-0">
+                                </div>
+                              </div>
+                            </div>
+                        </section><!--Fin de contenido de ventana modal
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                      <button type="button" class="btn btn-primary">Guardar cambios</button>
+                    </div>
+                  </div>
+                </div>
+            </div> <!--Fin de ventana
+            <!--VENTANA MODAL BANNER
+            <div class="modal fade" id="Banner" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered moda-lg">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5" id="exampleModalLabel">Configurar: Banner</h1>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      Banner
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                      <button type="button" class="btn btn-primary">Guardar cambios</button>
+                    </div>
+                  </div>
+                </div>
+            </div> <!--Fin de ventana
+            <!--VENTANA MODAL PERFIL
+            <div class="modal fade" id="Perfil" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered moda-lg">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5" id="exampleModalLabel">Configurar: Mi perfil</h1>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      Perfil
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                      <button type="button" class="btn btn-primary">Guardar cambios</button>
+                    </div>
+                  </div>
+                </div>
+            </div> <!--Fin de ventana
+            <!--VENTANA MODAL PRESENTACIÓN
+            <div class="modal fade" id="Presentación" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered moda-lg">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5" id="exampleModalLabel">Configurar: Mi presentación</h1>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      Presentación
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                      <button type="button" class="btn btn-primary">Guardar cambios</button>
+                    </div>
+                  </div>
+                </div>
+            </div> <!--Fin de ventana
+            <!--VENTANA MODAL EXPERIENCIA LABORAL
+            <div class="modal fade" id="ExpLaboral" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered moda-lg">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5" id="exampleModalLabel">Configurar: Experiencia laboral</h1>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      Experiencia laboral
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                      <button type="button" class="btn btn-primary">Guardar cambios</button>
+                    </div>
+                  </div>
+                </div>
+            </div> <!--Fin de ventana
+            <!--VENTANA MODAL MIS PROYECTOS
+            <div class="modal fade" id="Proyectos" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered moda-lg">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5" id="exampleModalLabel">Configurar: Mis proyectos</h1>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Proyectos
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                      <button type="button" class="btn btn-primary">Guardar cambios</button>
+                    </div>
+                  </div>
+                </div>
+            </div> <!--Fin de ventana
+            <!--VENTANA MODAL FOOTER
+            <div class="modal fade" id="Footer" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered moda-lg">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5" id="exampleModalLabel">Configurar: Footer</h1>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      Footer
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                      <button type="button" class="btn btn-primary">Guardar cambios</button>
+                    </div>
+                  </div>
+                </div>
+            </div> <!--Fin de ventana-->
+        <div class="col-1">
+        </div>
+    </div>
+    </div>    
+  <!--Formulario de login-->
+  
+    <!--Footer-->
+<footer class="bg-dark text-center text-white" style="bottom: 0%; height: 12.3vh;">
+  <!-- Copyright -->
+  <div class="text-center p-2" style="background-color: rgba(0, 0, 0, 0.2);">
+    © 2023 Copyright: Francisco Nicolás Ruiz
+    <a class="text-white" href="app.component.html"></a>
+  </div>
+</footer>
+</body>
+</html>

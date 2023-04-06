@@ -1,0 +1,35 @@
+.bg-image-vertical {
+    position: relative;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: auto 100%;
+    }
+    
+    @media (min-width: 1025px) {
+    .h-custom-2 {
+    height: 100%;
+    }
+    }
+.container-fluid{
+    background-color: rgb(255, 94, 0);
+}
+.centrado-logo{
+    margin-left: 50%;
+    width: 40vh
+}
+.formulario{
+    width: 32rem;
+}
+.image{
+    width: 130%;
+}
+@media (max-width: 600px) {
+   .centrado-logo{
+    width: 50vh;
+    margin-left:0% ;
+   }
+   .formulario{
+    width: 100%;
+   }
+  }
