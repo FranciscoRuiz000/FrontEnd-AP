@@ -1,0 +1,39 @@
+{
+    "nombres": "Francisco Nicolás",
+    "apellido": "Ruiz",
+    "descripcion": "una descripcion sobre mi",
+
+    "educacion":
+        [
+        {
+            "id":0,
+            "inicio":"Marzo de 2011",
+            "fin":"Diciembre de 2018",
+            "image":"assets/img/arg-programa-logo-personalizado.png",
+            "nivel":"Se Programar"
+        },
+        {
+            "id":1,
+            "inicio":"Marzo de 2011",
+            "fin":"Diciembre de 2018",
+            "image":"assets/img/arg-programa-logo-personalizado.png",
+            "nivel":"Se Programar"
+        }
+        ],
+    "redes":
+    [
+        {
+        "id":0,
+        "url":"https://www.linkedin.com/in/francisco-nicol%C3%A1s-ruiz/"
+        },
+        {
+        "id":1,
+        "url":"https://github.com/FranciscoRuiz000"
+        },
+        {
+        "id":2,
+        "url":"https://www.facebook.com/francisconicolas.ruiz.16/"
+        }
+    ]
+
+}

@@ -15,6 +15,10 @@ import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { NgCircleProgressModule } from 'ng-circle-progress';
 import { HardSoftComponent } from './hard-soft/hard-soft.component';
+import { HttpClientModule } from '@angular/common/http';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { FormsModule } from '@angular/forms';
+import { interceptorProvider } from './Servicios/interceptor-service';
 
 @NgModule({
   declarations: [
@@ -30,13 +34,16 @@ import { HardSoftComponent } from './hard-soft/hard-soft.component';
     HomeComponent,
     RegisterComponent,
     HardSoftComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgCircleProgressModule.forRoot({})
+    NgCircleProgressModule.forRoot({}),
+    HttpClientModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [interceptorProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
