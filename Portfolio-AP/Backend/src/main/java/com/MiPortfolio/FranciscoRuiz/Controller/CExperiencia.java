@@ -30,6 +30,14 @@ public class CExperiencia {
     @Autowired
     SExperiencia sExperiencia;
     
+    @GetMapping("/detail/{id}")
+    public ResponseEntity<Experiencia> getById(@PathVariable("id") int id){
+        if(!sExperiencia.existsById(id))
+            return new ResponseEntity(new Mensaje("no existe"), HttpStatus.NOT_FOUND);
+        Experiencia experiencia = sExperiencia.getOne(id).get();
+        return new ResponseEntity(experiencia, HttpStatus.OK);
+    }
+    
     @GetMapping("/lista")
     public ResponseEntity<List<Experiencia>> list(){
         List<Experiencia> list=sExperiencia.list();

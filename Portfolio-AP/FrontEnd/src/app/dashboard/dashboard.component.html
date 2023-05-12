@@ -348,29 +348,35 @@
                           EXPERIENCIA 1
                         </button>
                       </h2>
+                      <!--<form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
                       <div id="collapseTwo" class="accordion-collapse collapse show" aria-labelledby="headingTwo" data-bs-parent="#acordeon-exp">
                         <div class="accordion-body" style="background-color:rgb(233, 233, 233) ;">
-                          <div>
-                            <div class="mb-3">
+                          <div class="container" *ngIf="expLab">
+                            <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+                              <div class="mb-3">
                                 <label for="formFile" class="form-label">Seleccione el logo de la experiencia.</label>
                                 <input class="form-control" type="file" id="formFile">
                             </div>
                             <div>
-                                <label for="linkedin" class="form-label" >Modificar el título.</label>
-                                <input type="text" class="form-control" id="Linkedin" placeholder="Ingrese el nombre de la nueva experiencia" style="margin-bottom: 2%;">
+                                <label for="nombreE" class="form-label" >Modificar el título.</label>
+                                <input type="text" class="form-control" id="nombreE" name="nombreE" [(ngModel)]="expLab.nombreE" required placeholder="Ingrese el nombre de la nueva experiencia" style="margin-bottom: 2%;">
                             </div>
                             <div>
-                                <label for="linkedin" class="form-label" >Modificar el dato secundario.</label>
-                                <input type="text" class="form-control" id="Linkedin" placeholder="Ingrese la empresa o dato secundario" style="margin-bottom: 3%;">
+                                <label for="descripcionE" class="form-label" >Modificar el dato secundario.</label>
+                                <input type="text" class="form-control" id="descripcionE" name="descripcionE" [(ngModel)]="expLab.descripcionE" required placeholder="Ingrese la empresa o dato secundario" style="margin-bottom: 3%;">
                             </div>
                             <div class="btn-group my-2" role="group" aria-label="Basic mixed styles example" style="display: flex; align-items: end;">
-                              <button type="button" class="btn btn-danger">Eliminar</button>
+                              <button type="button" class="btn btn-danger" (click)="delete(Experiencia.id)">Eliminar</button>
                               <button type="button" class="btn btn-warning">Actualizar</button>
-                              <button type="button" class="btn btn-success">Guardar</button>
+                              
                             </div>
+                            </form>
+
+                            
                           </div>
                         </div>
                       </div>
+                    <!--</form>-->
                     </div>
                     <div class="accordion-item">
                       <h2 class="accordion-header" id="headingThree">

@@ -9,14 +9,14 @@ import { TokenService } from '../Servicios/token.service';
   styleUrls: ['./exp-lab.component.css']
 })
 export class ExpLabComponent implements OnInit {
-  expe: Experiencia[] = [];
+  expe: Experiencia []=[];
 
   constructor(private sExperiencia: SExperienciaService, private tokenService: TokenService) { }
 
   isLogged = false;
 
   ngOnInit(): void {
-    this.cargarExperiencia()
+    this.cargarExperiencia();
     if(this.tokenService.getToken()){
       this.isLogged = true;
     } else{

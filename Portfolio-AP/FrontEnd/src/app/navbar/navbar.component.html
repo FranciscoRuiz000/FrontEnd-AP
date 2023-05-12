@@ -43,6 +43,7 @@
         </ul>
         </div>
         <div class="col-xl-3 justify-content-end" style="display: flex; align-items: center;">
+          <button type="button" class="btn btn-dark" routerLink="/dashboard" *ngIf="isLogged">Panel de control</button>
             <a class="nav-link disabled fuente2">Iniciar sesión</a>
             <a class="nav-link nav-bar" href="/login">
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginModal" style="background-color:rgb(132, 230, 255); margin-left: -20%;" (click)="login()" *ngIf="!isLogged">

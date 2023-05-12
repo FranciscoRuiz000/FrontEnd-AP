@@ -19,6 +19,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { FormsModule } from '@angular/forms';
 import { interceptorProvider } from './Servicios/interceptor-service';
+import { EditExperienciaComponent } from './exp-lab/edit-experiencia.component';
+import { NewExperienciaComponent } from './exp-lab/new-experiencia.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +37,8 @@ import { interceptorProvider } from './Servicios/interceptor-service';
     RegisterComponent,
     HardSoftComponent,
     DashboardComponent,
+    EditExperienciaComponent,
+    NewExperienciaComponent,
   ],
   imports: [
     BrowserModule,
